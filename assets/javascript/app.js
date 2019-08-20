@@ -16,28 +16,27 @@ var game = {
     },
 
     start: function () {
-        timer = setInterval(game.countdown, 1000);
+        timer = setInterval(game.countdown, 30);
 
         $("#counter-wrapper").prepend(
             `<h2>Time Remaining: <span id='counter-number'>counter</span> Seconds</h2>`
         );
 
         $("#start").remove();
-
-        
-
         $("#counter-wrapper").append("<button id='done' class='btn btn-light'>Done</button>");
     },
 
     done: function () {
-        $("#counter-number").append("<h2>Time's Up!</h2>");
-        
-            if ($(".btn-dark").value() === 1) {
-                game.correct++;
-            } else {
-                game.incorrect++;
-            }
-        
+        clearInterval(timer);
+        $("#counter-wrapper").remove()
+        $("#counter-wrapper").append("<h2>Time's Up!</h2>");
+
+        if ($(".btn-dark").value === 1) {
+            game.correct++;
+        } else {
+            game.incorrect++;
+        }
+
         this.result();
     },
 
@@ -61,9 +60,9 @@ $(document).on("click", "#start", function () {
     })
 });
 
-$(document).on("click", "#done", function() {
+$(document).on("click", "#done", function () {
     game.done();
-  });
+});
 
 // setTimeout(timeUp, 1000 * 20)
 
