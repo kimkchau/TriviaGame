@@ -2,96 +2,216 @@
 <html lang="en">
 
 <head>
+  <title>Trivia</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- jQuery Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 
+  <!-- link to style.css -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">You Think You Know Cars</h1>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-8">
+
+        <div id="counter-wrapper"></div>
+        <!-- <button type="button" id="done" class="btn btn-light">Done</button> -->
+
+        <h2></h2>
+
+        <div class="bd-example justify-content-center">
+          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="6"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="7"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="8"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="9"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="10"></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <!-- Start Trivia Game -->
+              <div class="carousel-item active" data-wrap="false" data-pause="false">
+                <img src="./assets/images/gears.jpg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Start Game</h5>
+                  <p>You have 30 secs to answer all 10 trivia questions</p>
+                  <button type="button" id="start" class="btn btn-light">Start</button>
+
+                </div>
+              </div>
+
+              <!-- First Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/Wrangler.jpg" class="d-block w-100" alt="Jeep">
+                <div class="carousel-caption d-none d-md-block">
+                  <p>What's the name of the parent company to Jeep</p>
+                  <button type="button" value="0" class="btn btn-dark">GM</button>
+                  <button type="button" value="1" class="btn btn-dark">Fiat Chrysler</button>
+                  <button type="button" value="0" class="btn btn-dark">Ford</button>
+                </div>
+              </div>
+
+              <!-- Second Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/Ford Mustang.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p>Name the car model</p>
+                  <button type="button" value="0" class="btn btn-dark">Viper</button>
+                  <button type="button" value="0" class="btn btn-dark">Corvette</button>
+                  <button type="button" value="1" class="btn btn-dark">Mustang</button>
+                </div>
+              </div>
+
+              <!-- Third Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/challenger.jpg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p>Name the car model</p>
+                  <button type="button" value="0" class="btn btn-dark">Camero</button>
+                  <button type="button" value="1" class="btn btn-dark">Challenger</button>
+                  <button type="button" value="0" class="btn btn-dark">Charger</button>
+                </div>
+              </div>
+
+              <!-- 4th Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/Grand-Cherokee.jpg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p>Name the car</p>
+                  <button type="button" value="1" class="btn btn-dark">Jeep Grand Cherokee</button>
+                  <button type="button" value="0" class="btn btn-dark">Ford Explorer </button>
+                  <button type="button" value="0" class="btn btn-dark">Toyota 4runner</button>
+                </div>
+              </div>
+
+              <!-- 5th Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/Ram.jpg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p>Name the car</p>
+                  <button type="button" value="0" class="btn btn-dark">Ford F-150</button>
+                  <button type="button" value="1" class="btn btn-dark">Dodge Ram</button>
+                  <button type="button" value="0" class="btn btn-dark">Toyota Tundra</button>
+                </div>
+              </div>
+
+              <!-- 6th Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/prius.jpeg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p>Name the car</p>
+                  <button type="button" value="0" class="btn btn-dark">Honda Fit</button>
+                  <button type="button" value="0" class="btn btn-dark">Ford Focus</button>
+                  <button type="button" value="1" class="btn btn-dark">Toyota Prius</button>
+                </div>
+              </div>
+
+              <!-- 7th Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/4runner.jpeg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p>Name the car</p>
+                  <button type="button" value="0" class="btn btn-dark">Jeep Cherokee</button>
+                  <button type="button" value="0" class="btn btn-dark">Ford Explorer</button>
+                  <button type="button" value="1" class="btn btn-dark">Toyota 4Runner</button>
+                </div>
+              </div>
+
+              <!-- 8th Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/Tundra.jpeg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p>Name the car</p>
+                  <button type="button" value="0" class="btn btn-dark">Dodge Ram</button>
+                  <button type="button" value="1" class="btn btn-dark">Toyota Tundra</button>
+                  <button type="button" value="0" class="btn btn-dark">Ford F-150</button>
+                </div>
+              </div>
+
+              <!-- 9th Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/Supra.jpeg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p>Name the car</p>
+                  <button type="button" value="0" class="btn btn-dark">Acura NSX</button>
+                  <button type="button" value="0" class="btn btn-dark">Mazda MX-5 Miata</button>
+                  <button type="button" value="1" class="btn btn-dark">Toyota Supra</button>
+                </div>
+              </div>
+
+              <!-- 10th Question/Slide -->
+              <div class="carousel-item" data-interval="2000" data-wrap=false data-pause=false>
+                <img src="./assets/images/LandCruiser.jpg" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p>Name the car</p>
+                  <button type="button" value="1" class="btn btn-dark">Toyota Land Cruiser</button>
+                  <button type="button" value="0" class="btn btn-dark">Land Rover Discovery</button>
+                  <button type="button" value="0" class="btn btn-dark">Jeep Wranger</button>
+                </div>
+              </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div id="time-left"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-    
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
-
-  <!-- Bootstrap File -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-
-  <title>Trivia TriviaGame!</title>
-</head>
-
-<body>
-  <h1>You Think You Know About Cars</h1>
-
-  <div class="bd-example justify-content-center">
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-      </ol>
-
-      <!-- First Question/Slide -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./assets/images/america-auto-car-57409.jpg" class="d-block  w-100" alt="Jeep">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Jeep</h5>
-            <p>What's the name of the parent company to Jeep</p>
-            <button type="button" class="btn btn-outline-light">GM</button>
-            <button type="button" class="btn btn-outline-light ">Fiat Chrysler</button>
-            <button type="button" class="btn btn-outline-light">Ford</button>
-
-          </div>
-
-        </div>
-        <!-- Second Question/Slide -->
-        <div class="carousel-item">
-          <img src="./assets/images/america-auto-car-57409.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
-
-        <!-- Third Question/Slide -->
-        <div class="carousel-item">
-          <img src="./assets/images/automobile-automotive-bmw-2127024.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-        </div>
-
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first then Bootstrap JS -->
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script> -->
+  <!-- link the app.js file -->
+  <script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>
 
 </html>
